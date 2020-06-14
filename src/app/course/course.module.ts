@@ -5,6 +5,7 @@ import { CourseRoutingModule, courseRoutingComponents } from './course-routing.m
 import { CourseFeaturedComponent } from './course-featured/course-featured.component';
 import { CourseRecentComponent } from './course-recent/course-recent.component';
 import { CourseCategoriesComponent } from './course-categories/course-categories.component';
+import { ImagePipe } from '../image.pipe';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { CourseCategoriesComponent } from './course-categories/course-categories
     CommonModule,
     CourseRoutingModule
   ],
+  providers: [ImagePipe],
   exports: [CourseFeaturedComponent]
 })
 export class CourseModule { }

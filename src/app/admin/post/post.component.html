@@ -1,0 +1,58 @@
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <app-common-left></app-common-left>
+                    <!-- <div class="dash-left">
+                        <ul>
+                            <li class="active"><a routerLink="/dashboard" routerLinkActive="active"
+                                    class="nav-link">Dashboard</a></li>
+                            <a routerLink="/Post" routerLinkActive="active" class="nav-link">Posts</a>
+                            <li><a href="#">Courses</a></li>
+                            <li><a href="#">Pages</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>All post</h1>
+                            </div>
+                            <div class="dash-nav">
+                                <a [routerLink]="['/admin/create-post']" class="btn btn-success">Add Post</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>#ID</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Created At</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr *ngFor="let post of allpost">
+                                <td>{{post.id}}</td>
+                                <td><img src="{{post.image | image}}" (error)="imageError($event)"></td>
+                                <td>{{post.title}}</td>
+                                <td>{{post.createdat | date: 'mediumDate'}}</td>
+                                <td class="action text-white">
+                                    <a [routerLink]="['/admin/edit-post', post.id]" class="btn btn-info btn-sm">Edit</a>
+                                    <a (click)="onDelete(post.id)" class="btn btn-danger btn-sm ml-1">Delete</a>
+                                </td>
+                            </tr>
+                            <tr *ngIf='!allpost'>
+                                <td colspan="5">Loading</td>
+                            </tr>
+                            <tr *ngIf='allpost && allpost.length==0'>
+                                <td colspan="5">Nodata exist</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

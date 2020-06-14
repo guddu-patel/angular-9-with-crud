@@ -1,0 +1,50 @@
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <app-common-left></app-common-left>
+
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>All course</h1>
+                            </div>
+                            <div class="dash-nav">
+                                <a [routerLink]="['/admin/create-course']" class="btn btn-success">Add Course</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>#ID</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Created At</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr *ngFor="let course of allcourse">
+                                <td>{{course.id}}</td>
+                                <td><img src="{{course.image | image}}" (error)="imageError($event)"></td>
+                                <td>{{course.title}}</td>
+                                <td>{{course.createdat | date: 'mediumDate'}}</td>
+                                <td class="action text-white">
+                                    <a [routerLink]="['/admin/edit-course', course.id]"
+                                        class="btn btn-info btn-sm">Edit</a>
+                                    <a (click)="onDelete(course.id)" class="btn btn-danger btn-sm ml-1">Delete</a>
+                                </td>
+                            </tr>
+                            <tr *ngIf='!allcourse'>
+                                <td colspan="5">Loading</td>
+                            </tr>
+                            <tr *ngIf='allcourse && allcourse.length==0'>
+                                <td colspan="5">Nodata exist</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

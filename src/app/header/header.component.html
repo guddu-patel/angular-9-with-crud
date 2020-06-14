@@ -5,7 +5,7 @@
 </style>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a href="#" class="navbar-brand p-0">
+        <a routerLink='/' class="navbar-brand p-0">
             <img src="./assets/img/logo.png" height="35" alt="CoolBrand">
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -21,7 +21,14 @@
                 <!-- <a routerLink='/page/aboutus' routerLinkActive='active' class="nav-item nav-link">About us</a> -->
             </div>
             <div class="navbar-nav ml-auto">
-                <a href="#" class="nav-item nav-link">Login</a>
+                <ng-container *ngIf='!loggedUser'>
+                    <a routerLink='/login' routerLinkActive='active' class="nav-item nav-link">Login</a>
+                    <a routerLink='/register' routerLinkActive='active' class="nav-item nav-link">register</a>
+                </ng-container>
+                <ng-container *ngIf='loggedUser'>
+                    <a routerLink='admin/dashboard' class="nav-item nav-link">Admin</a>
+                    <a (click)='logout()' class="nav-item nav-link">logout</a>
+                </ng-container>
             </div>
         </div>
     </div>

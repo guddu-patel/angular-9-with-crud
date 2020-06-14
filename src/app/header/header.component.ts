@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  loggedUser = false;
+  constructor(private router: Router, private cmnser: CommonService) {
+    this.loggedUser = cmnser.isLogged();
+    cmnser.getLoggedEvent.subscribe((data) => {
+      this.loggedUser = cmnser.isLogged();
+    });
 
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void { }
+
+  logout() {
+    this.cmnser.logout();
+  }
 }

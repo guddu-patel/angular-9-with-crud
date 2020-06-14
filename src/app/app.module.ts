@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+// import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule, appRoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
@@ -17,7 +18,7 @@ import { AuthModule } from './auth/auth.module';
     BannerComponent,
     HeaderComponent,
     FooterComponent,
-    appRoutingComponents
+    appRoutingComponents,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,8 @@ import { AuthModule } from './auth/auth.module';
     AuthModule,
     CourseModule,
     StaticpagesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,90 @@
+<section class="Singup-wrap mtb-40">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="login-box">
+                    <h1>User Registration</h1>
+                    <div class="alert alert-success" *ngIf="datasaved">
+                        {{massage}}
+                    </div>
+                    <div class="alert alert-danger" *ngIf="error">
+                        {{massage}}
+                    </div>
+                    <form (ngSubmit)="onSubmit(regForm)" [formGroup]="regForm">
+
+                        <div class="form-group form-row">
+                            <label class="col-md-3">First Name : <span class="required">*</span></label>
+                            <div class="col-md-9">
+                                <input type="text" formControlName="FirstName" class="form-control"
+                                    placeholder="First Name" required
+                                    [class.is-invalid]="!regForm.get('FirstName').valid && regForm.get('FirstName').touched">
+                                <span *ngIf="!regForm.get('FirstName').valid && regForm.get('FirstName').touched"
+                                    class="error">Please
+                                    enter First Name !!!</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-row">
+                            <label class="col-md-3">Last Name : <span class="required">*</span></label>
+                            <div class="col-md-9">
+                                <input type="text" formControlName="LastName" class="form-control"
+                                    placeholder="Last Name" required
+                                    [class.is-invalid]="!regForm.get('LastName').valid && regForm.get('LastName').touched">
+                                <span *ngIf="!regForm.get('LastName').valid && regForm.get('LastName').touched"
+                                    class="error">Please
+                                    enter Lasr Name !!!</span>
+                            </div>
+                        </div>
+                        <div class="form-group form-row">
+                            <label class="col-md-3">Email ID <span class="required">*</span></label>
+                            <div class="col-md-9">
+                                <input type="text" formControlName="EmailId" class="form-control" placeholder="Email Id"
+                                    required [class.is-invalid]="!EmailId.valid && EmailId.touched">
+                                <div *ngIf="!EmailId.valid && EmailId.touched" class="error">
+
+                                    <span *ngIf="EmailId.errors.required">Please
+                                        enter Email !!!</span>
+                                    <span *ngIf="EmailId.errors.email">Please
+                                        enter valid Email !!!</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group form-row">
+                            <label class="col-md-3">Password <span class="required">*</span></label>
+                            <div class="col-md-9">
+                                <input type="text" formControlName="Password" class="form-control"
+                                    placeholder="Password" required pattern="^(?=.*\d).{4,8}$"
+                                    [class.is-invalid]="!Password.valid && Password.touched">
+                                <div *ngIf="!Password.valid && Password.touched" class="error">
+                                    <span *ngIf="Password.errors.required">Please
+                                        enter password !!!</span>
+                                    <span *ngIf="Password.errors.pattern">Password must be between 4 and 8 digits long
+                                        and include at least one numeric digit.</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" [disabled]="!regForm.valid" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- display all user exixtin system -->
+    <!-- <br><br>
+    <div *ngIf='data; else elseBlock'>
+        <div *ngIf="data.length==0"> Nodata found</div>
+        <li *ngFor="let emp of data;let i= index">
+            {{emp.id}}-> {{emp.FirstName}},{{emp.EmailId}},{{emp.Password}} <button class="btn btn-sm btn-danger"
+                (click)='deleteEmp(emp.id)'>X</button>
+        </li>
+    </div>
+    <ng-template #elseBlock>
+        Loading data
+    </ng-template> -->
+</section>

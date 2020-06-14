@@ -1,8 +1,9 @@
 <app-header></app-header>
+<app-banner *ngIf='router.url=="/"'></app-banner>
+
 <div class="container">
     <ng-container *ngIf='router.url=="/"'>
 
-        <app-banner></app-banner>
         <app-course-featured></app-course-featured>
     </ng-container>
     <router-outlet></router-outlet>

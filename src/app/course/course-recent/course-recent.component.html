@@ -1,1 +1,14 @@
-<p>course-recent works!</p>
+<div class="right-widget recent-post">
+    <h3>Recent Posts</h3>
+    <a href="#" *ngFor="let resCrs of [1,2,3,4,5,6,7,8,9,10] | slice:0:5">
+        <div class="rb-box">
+            <div class="rb-box-img">
+                <img src="./assets/img/img{{resCrs}}.jpg" alt="blog1" />
+            </div>
+            <div class="rb-box-desc">
+                <h4>Course {{resCrs}}</h4>
+                <p>Posted On: March 10, 2019</p>
+            </div>
+        </div>
+    </a>
+</div>

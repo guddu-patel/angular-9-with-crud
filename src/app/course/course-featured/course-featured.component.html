@@ -1,15 +1,14 @@
 <section class="featured-blog mtb-40">
     <div class="container">
         <div class="row">
-            <div class="col-md-4" *ngFor="let post of [1,2,3,4,5,6,7,8]">
+            <div class="col-md-4" *ngFor="let course of allCourse">
                 <div class="blog-box">
-                    <img src="./assets/img/img{{post}}.jpg" alt="blog1" />
-                    <h3>Angular 7 Full Course ->{{post}}</h3>
+                    <img [src]="course.image" (error)="imageError($event)" alt="blog1" height="225px" />
+                    <h3>{{course.title}}</h3>
                     <p>by <span>Guddu patel</span></p>
-                    <p>Angular 7 released in October 2018, just like it was scheduled. The new features of the framework
-                        are the updated form of Node 10..
+                    <p>{{course.title}}
                     </p>
-                    <a href="#" class="btn btn-danger">Read more...</a>
+                    <a routerLink='/courses/{{course.id}}' class="btn btn-success">continue reading...</a>
                 </div>
             </div>
         </div>

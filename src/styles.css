@@ -49,7 +49,7 @@ h1 {font-size: 2.4rem;margin-bottom: 30px;}
 .dash-left ul li:hover a {background-color:#007EDB; text-decoration: none; color:#fff;}
 .dash-left ul li a.active {background-color:#007EDB; color:#fff;}
 .dash-header {display:flex; justify-content: space-between;}
-.table img { width:80px; }
+.table img {max-width: 100px; max-height: 50px; }
 
 footer {background-color: #000;color:#fff; padding:20px;}
 
@@ -63,4 +63,4 @@ footer {background-color: #000;color:#fff; padding:20px;}
 @media (max-width: 767px) {
 .intro-text {display: none;}
 }
-                                    
+              
