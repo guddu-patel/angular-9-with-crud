@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 # Getting Started
+
+[Live demo](http://angulardemo.guddu.epizy.com/)
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 ## Prerequisites
 To run this project we are using json server (you are welcome to use your own api)
