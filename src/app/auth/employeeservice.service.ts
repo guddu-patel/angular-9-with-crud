@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmployeeserviceService {
-  url = "http://localhost:3000/employee";
+  url = "https://api.npoint.io/12a0328b2aa419d1d1fd/employee";
   constructor(private http: HttpClient) { }
   createemployee(emp: Employee): Observable<any> {
     return this.http.post(this.url, emp);

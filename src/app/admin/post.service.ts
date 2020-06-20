@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PostService {
-  url = "http://localhost:3000/post";
+  url = "https://api.npoint.io/12a0328b2aa419d1d1fd/post";
 
   constructor(private http: HttpClient) { }
   getPost() {

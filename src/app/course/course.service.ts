@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CourseService {
-  url = "http://localhost:3000/course";
+  url = "https://api.npoint.io/12a0328b2aa419d1d1fd/course";
 
   constructor(private http: HttpClient) { }
   getCourse() {
