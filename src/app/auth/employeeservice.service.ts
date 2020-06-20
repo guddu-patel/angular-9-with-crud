@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Employee } from './employee';
 import { Observable, from } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeserviceService {
-  url = "https://api.npoint.io/12a0328b2aa419d1d1fd/employee";
+  url = environment.baseUrl + "/employee";
   constructor(private http: HttpClient) { }
   createemployee(emp: Employee): Observable<any> {
     return this.http.post(this.url, emp);

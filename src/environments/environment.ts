@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // baseUrl: 'https://api.npoint.io/12a0328b2aa419d1d1fd'
+  baseUrl: 'https://my-json-server.typicode.com/guddu-patel/angular-9-with-crud'
 };
 
 /*

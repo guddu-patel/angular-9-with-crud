@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
-  url = "https://api.npoint.io/12a0328b2aa419d1d1fd/post";
+  url = environment.baseUrl + "/post";
 
   constructor(private http: HttpClient) { }
   getPost() {

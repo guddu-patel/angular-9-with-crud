@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
-  url = "https://api.npoint.io/12a0328b2aa419d1d1fd/course";
+  url = environment.baseUrl + "/course";
 
   constructor(private http: HttpClient) { }
   getCourse() {
